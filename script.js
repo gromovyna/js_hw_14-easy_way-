@@ -13,6 +13,6 @@ let obj = {
 }
 
 let newObj = {
-    ...obj,...obj.inner,...obj.foo2
+    ...obj.x,...obj.y,...obj.inner,...obj.foo2
 }
 console.log(newObj);
