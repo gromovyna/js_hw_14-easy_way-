@@ -1,5 +1,3 @@
-
-
 let obj = { 
     x: 10, 
     y: 20, 
@@ -27,6 +25,5 @@ function convert (object){
                 }
             }    
             return newObj;
-        };
-        
+        };       
         console.log(convert(obj));
