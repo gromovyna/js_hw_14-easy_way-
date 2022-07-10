@@ -1,4 +1,5 @@
 
+
 let obj = { 
     x: 10, 
     y: 20, 
@@ -12,7 +13,20 @@ let obj = {
     } 
 }
 
-let newObj = {
-    ...obj.x,...obj.y,...obj.inner,...obj.foo2
-}
-console.log(newObj);
+function convert (object){
+    let newObj ={}
+
+    for(let key in object) {
+        if(typeof object[key] === 'object') {
+            let newObj2 = convert(object[key]);
+            for(let innerKey in newObj2) {
+            newObj[innerKey] = newObj2[innerKey]
+                    }
+        } else {
+            newObj[key] = object[key];
+                }
+            }    
+            return newObj;
+        };
+        
+        console.log(convert(obj));
